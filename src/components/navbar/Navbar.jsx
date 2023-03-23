@@ -3,7 +3,7 @@ import { Nav } from "./Navbar.style"
 
 const Navbar = () => {
     return (
-        <Nav>
+        <Nav justify="space-beetwen" wrap="wrap">
 
         </Nav>
     )
