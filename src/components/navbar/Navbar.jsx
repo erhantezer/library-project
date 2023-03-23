@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HamburgerIcon, Logo, Menu, MenuLink, Nav } from "./Navbar.style"
+import { HamburgerIcon, Logo, Menu, MenuLink, Nav } from "./Navbar.style";
 import { menuIcon } from "../../helper/iconData";
 
 
@@ -16,7 +16,6 @@ const Navbar = () => {
             <Menu showMenu={showMenu}>
                 <MenuLink to="/">Home</MenuLink>
                 <MenuLink to="/about">About</MenuLink>
-
                 {currentUser ? (
                     <MenuLink to="/login">
                         Logout
