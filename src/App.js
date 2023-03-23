@@ -1,11 +1,15 @@
+import { useState } from "react";
 import AppRouter from "./router/AppRouter"
+import { lightheme } from "./styles/theme";
+import { ThemeProvider } from "styled-components";
 
 function App() {
-  
+  const [themes, setThemes] = useState(lightheme);
+
   return (
-    <div>
+    <ThemeProvider theme={themes}>
         <AppRouter/>
-    </div>
+    </ThemeProvider>
   );
 }
 
