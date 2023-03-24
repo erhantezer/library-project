@@ -1,8 +1,9 @@
 
-import { HomeContainer, HomeImage } from './Home.style';
+import { HomeContainer, HomeImage, MainContainer } from './Home.style';
 import Header from '../../components/header/Header';
 import { useGlobalContext } from "../../context"
 import homeImg from "../../assets/books.jpg"
+import Card from '../../components/card/Card';
 
 const Home = () => {
     const { myData } = useGlobalContext()
@@ -10,9 +11,14 @@ const Home = () => {
     return (
         <HomeContainer>
             <Header />
+
             <HomeImage>
                 <img src={homeImg} alt="home" />
             </HomeImage>
+
+            <MainContainer>
+                <Card/>
+            </MainContainer>
         </HomeContainer>
     )
 }
