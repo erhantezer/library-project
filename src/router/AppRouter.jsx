@@ -8,15 +8,20 @@ import PrivateRouter from "./PrivateRouter"
 import About from "../pages/about/About"
 import Detail from "../pages/detail/Detail"
 import Footer from "../components/footer/Footer"
+import { useState } from "react"
 
 const AppRouter = () => {
+    const [currentUser, setCurrentUser] = useState(
+        sessionStorage.getItem("user")
+    );
+
     return (
         <BrowserRouter>
-            <Navbar/>
+            <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
             <GlobalStyles/>
             <Routes>
                 <Route path="/" element={<Home/>} />
-                <Route path="login" element={<Login/>} />
+                <Route path="login" element={<Login setCurrentUser={setCurrentUser} />} />
                 <Route path="register" element={<Register/>} />
                 <Route  element={<PrivateRouter/>}>
                     <Route path="about" element={<About/>} />

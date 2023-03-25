@@ -1,9 +1,36 @@
-import React from 'react'
+import React from "react";
+import {
+    FormContainer,
+    Header,
+    LoginContainer,
+    StyledButton,
+    StyledForm,
+    StyledInput,
+} from "./Login.style";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setCurrentUser }) => {
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setCurrentUser("erhan");
+        sessionStorage.setItem("user", "erhan");
+        navigate(-1);
+    };
+
     return (
-        <div>Login</div>
-    )
-}
+        <LoginContainer>
+            <FormContainer>
+                <StyledForm onSubmit={handleSubmit}>
+                    <Header>Login Here</Header>
+                    <StyledInput type="text" placeholder="Username" required />
+                    <StyledInput type="password" placeholder="Password" required />
+                    <StyledButton type="submit">Login</StyledButton>
+                </StyledForm>
+            </FormContainer>
+        </LoginContainer>
+    );
+};
 
-export default Login
+export default Login;
