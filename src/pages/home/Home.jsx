@@ -10,15 +10,19 @@ const Home = () => {
 
     return (
         <HomeContainer>
-            <Header />
+            <Header/>
 
-            <HomeImage>
-                <img src={homeImg} alt="home" />
-            </HomeImage>
-
-            <MainContainer>
-                <Card/>
-            </MainContainer>
+            {!myData.length ? (
+                <HomeImage>
+                    <img src={homeImg} alt="home" />
+                </HomeImage>
+            ) : (
+                <MainContainer wrap="wrap">
+                    {
+                        myData.map((item) => <Card key={item.id} item={item} />)
+                    }
+                </MainContainer>
+            )}
         </HomeContainer>
     )
 }
