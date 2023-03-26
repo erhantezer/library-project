@@ -13,7 +13,9 @@ function App() {
   useEffect(() => {
     sessionStorage.setItem("theme", myTheme);//kullanıcı refresh atsa bile theme seçimi değişmeyecek
     setThemes(myTheme === "light" ? lightheme : darktheme);
-  }, [myTheme]);//myTheme değiştikçe storage ve themes güncellenecek. Böylelikle Themeprovidera verdiğimiz theme güncellenmiş olacak. Ve syfa refresh olduğunda kullanıcın theme tercihi değişmemesi için storage da güncellenmiş oluyor.
+  }, [myTheme]);
+  //myTheme değiştikçe storage ve themes güncellenecek. Böylelikle Themeprovidera verdiğimiz theme güncellenmiş olacak. Ve syfa refresh olduğunda kullanıcın theme tercihi değişmemesi için storage da güncellenmiş oluyor.
+
   return (
     <ThemeProvider theme={themes}>
       {/* <GlobalStyles /> */}
